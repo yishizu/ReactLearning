@@ -1,4 +1,4 @@
-import {createContext, useState, useMemo} from "react";
+import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
 
 //color design tokens
@@ -127,38 +127,39 @@ export const themeSettings = (mode) =>{
     const colors = tokens(mode);
 
     return{
-        pallete:{
+        palette:{
             mode:mode,
-            ...(mode==='dark'?{
+            ...(mode==='dark'
+            ?{
                 primary:{
-                    main:colors.primary[500],
+                    main: colors.primary[500],
                 },
                 secondary:{
-                    main:colors.greenAccent[500],
+                    main: colors.greenAccent[500],
                 },
                 neutral:{
-                    dark:colors.grey[700],
-                    main:colors.grey[500],
-                    light:colors.grey[100],
+                    dark: colors.grey[700],
+                    main: colors.grey[500],
+                    light: colors.grey[100],
                 },
                 background:{
-                    default:colors.primary[500],
-                }
+                    default: colors.primary[500],
+                },
             }:{
                 primary:{
-                    main:colors.primary[100],
+                    main: colors.primary[100],
                 },
                 secondary:{
-                    main:colors.greenAccent[500],
+                    main: colors.greenAccent[500],
                 },
                 neutral:{
-                    dark:colors.grey[700],
-                    main:colors.grey[500],
-                    light:colors.grey[100],
+                    dark: colors.grey[700],
+                    main: colors.grey[500],
+                    light: colors.grey[100],
                 },
                 background:{
-                    default:"#fcfcfc",
-                }
+                    default: "#fcfcfc",
+                },
             })
         },
         typography:{
@@ -219,4 +220,4 @@ export const useMode= () =>{
     const theme = useMemo(()=> createTheme(themeSettings(mode)),[mode]);
 
     return [theme, colorMode];
-}
+};
